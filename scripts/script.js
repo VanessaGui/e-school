@@ -6,11 +6,8 @@ for(let i = 0; i < profil.length; i++){
 }
 
 function getProfileCard(){
-    for(let i = 0; i < profileCard.length; i++){
-      profileCard[i].classList.toggle('hidden');
-    
-    }
+  for(let i = 0; i < profileCard.length; i++){
+    profileCard[i].classList.toggle('hidden');
+  }
 }
-
-
 

@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script type="module" src="scripts/script.js" ></script>
+    <script src="https://cdn.tiny.cloud/1/b8m4cc9vao46ed6nxr44fan55hh9agksd6chwaptatj964uz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
     <?php require_once('routes.php'); ?>
@@ -22,5 +23,19 @@
         <a href="?controller=accueil&action=mentions">Mentions légales</a>
         <div>e-school 2024 Tous droits réservés</div>
     </footer>
+    <script>
+    tinymce.init({
+      selector: 'textarea.editable',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ]
+    });
+  
+  </script>
 </body>
 </html>

@@ -34,11 +34,11 @@ class Accueil {
               $_SESSION['email'] = $email;
               $_SESSION['profil'] = $user['profil'];
               $_SESSION['id_user'] = $user['id_user'];  
-          } var_dump($_SESSION);
+          }
         } if( $_SESSION['profil'] === 'administrateur'){
           header('Location: index.php?controller=admin&action=index');
         } else if( $_SESSION['profil'] === 'formateur'){
-          header('Location: index.php?controller=formateur&action=index');
+          header('Location: index.php?controller=cours&action=index');
         } else if( $_SESSION['profil'] === 'étudiant') {
           header('Location: index.php?controller=etudiant&action=index');
         } else{ 

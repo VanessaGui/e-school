@@ -27,7 +27,6 @@
 
         public function createCompte() {
             $createCompte = Accueil::createCompte();
-            require_once('views/etudiant/index.php');
         }
 
         public function logout() {

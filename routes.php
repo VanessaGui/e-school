@@ -7,24 +7,28 @@
         $controller = new AccueilController();
         require_once('models/accueil.php');
         require_once('models/admin.php');
-        require_once('models/formateur.php');
+        require_once('models/cours.php');
+        require_once('models/etape.php');
         require_once('models/etudiant.php');
       break;
       case 'admin':
         require_once('models/admin.php');
-        require_once('models/formateur.php');
+        require_once('models/cours.php');
+        require_once('models/etape.php');
         require_once('models/etudiant.php');
         $controller = new AdminController();
       break;
-      case 'formateur':
+      case 'cours':
         require_once('models/admin.php');
-        require_once('models/formateur.php');
+        require_once('models/cours.php');
+        require_once('models/etape.php');
         require_once('models/etudiant.php');
-        $controller = new FormateurController();
+        $controller = new coursController();
       break;
       case 'etudiant':
         require_once('models/admin.php');
-        require_once('models/formateur.php');
+        require_once('models/cours.php');
+        require_once('models/etape.php');
         require_once('models/etudiant.php');
         $controller = new EtudiantController();
       break;
@@ -33,10 +37,9 @@
     $controller->{ $action }();
   }
 
-  // we're adding an entry for the new controller and its actions
   $controllers = array('accueil' => ['accueil', 'connect', 'creerCompte', 'createCompte', 'error', 'index','login', 'logout', 'mentions'],
-                       'admin' => ['index', 'header'],
-                      'formateur' => ['', ''],
+                       'admin' => ['ajoutEtudiant', 'creerEtudiant', 'createEtudiant', 'ajoutFormateur', 'creerFormateur', 'createFormateur', 'index', 'header', 'displayEtudiants', 'selectEtudiant'],
+                      'cours' => ['ajoutCours', 'ajoutEtape', 'creerCours', 'creerEtape', 'index', 'voirCours', 'modifCours', 'modifyCours', 'modifyEtape'],
                     'etudiant' => ['index', '']);
 
   if (array_key_exists($controller, $controllers)) {

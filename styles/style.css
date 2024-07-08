@@ -101,12 +101,18 @@ hr{
     background-color: #227c9d;
     border: none;
 }
+.hr{
+    width: 75%;
+    height: 2px;
+    background-color: #b33951;
+    border: none;
 
+}
 footer{
     display: flex;
     justify-content: center;
     gap: 5%;
-    margin: 30px 0 15px 0;
+    margin:30px 0 15px 0;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -191,7 +197,7 @@ h1{
     font-style: normal;
     font-variation-settings:
       "wdth" 100;  
-    margin: 12vh 82vw; 
+    margin: 12vh auto auto 88vw; 
 }
 .hidden{
     display: none;
@@ -245,12 +251,15 @@ h1{
     padding: 2% 6%;
 }
 
-.form-content {
+.form-content, .form-content2 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     box-sizing: border-box;
     gap: 8vh;
+}
+.form-content2 {
+align-items: center;
 }
 .form-label{
     display: flex;
@@ -260,6 +269,12 @@ h1{
     width: 300px;
     border: 0;
     border-bottom: 2px solid rgb(27, 151, 165);
+}
+.form-label textarea{
+    border-style: none;
+    border: 2px solid rgb(27, 151, 165);
+    width: 300px;
+    height: 100px;
 }
 .form-submit{
     display: flex;
@@ -277,16 +292,153 @@ h1{
     background-color: transparent;
     border: 2px solid rgb(27, 151, 165);
     border-radius: 15px;
-    padding: 1% 3%;
+    padding: 5px 3%;
     cursor: pointer;
 }
 .form-button:hover {
-   padding: 1% 4%;
+   padding: 5px 4%;
 }
 .form-explain {
     color:  rgb(34, 124, 157);
     align-self: flex-start;
 }
+.explain{
+    margin: 0 0 30px 30px;
+}
+.form-etape{
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.voir{
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.voir h1{
+    align-self: center;
+}
+.voir h2{
+    align-self: flex-start;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+.container1, .container2{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.container1{
+    border-right: 2px solid #07020d;
+    padding-right: 10px;
+}
+.container-button{
+    margin: 10vh 0;
+    align-self: center;
+}
+h2{ 
+    align-self: center;
+    margin-bottom: 30px;
+}
+.titre-etape{
+    margin-top: 30px;
+    font-weight: bold;
+}
+.paragraph{
+    margin-top: 30px;
+    align-self: flex-start;
+}
+table{
+    margin-bottom: 30px;
+}
+tr{
+   display: flex;
+   align-items: center;
+    padding: 10px;
+    gap: 30px;
+    border-bottom:1px solid #07020d;
+    border-style: dotted;
+}
+td{
+    width: 50%;
+}
+.table-button, .suppr-button{
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100; 
+    color:  rgb(7, 2, 13);
+    background-color: transparent;
+    border: 2px solid rgb(27, 151, 165);
+    border-radius: 15px;
+    padding: 2px 10px;
+}
+.table-button:hover{
+    color: rgb(27, 151, 165);
+}
+.suppr-button{
+    color: #b33951;
+    border: none;
+}
+.suppr-button:hover{
+    color: crimson;
+}
 
-
-
+.button{
+    text-decoration: none;
+    color:  rgb(7, 2, 13);
+    background-color: transparent;
+    border: 2px solid rgb(27, 151, 165);
+    border-radius: 15px;
+    padding: 5px 20px;
+    align-self: center;
+}
+.button:hover{
+   padding: 5px 40px;
+}
+.button2{
+    text-decoration: none;
+    color:  #b33951;
+    background-color: transparent;
+    border: 2px solid #b33951;
+    border-radius: 15px;
+    padding: 5px 20px;
+    align-self: center;
+}
+.button2:hover{
+    padding: 5px 40px;
+    color: crimson;
+}
+.button-etape{
+    margin-bottom: 30px;
+    align-self: center;
+}
+.etape-button{
+    margin-top: 30px;
+}
