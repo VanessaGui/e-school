@@ -16,7 +16,7 @@ class Admin {
       $this->profil = $profil;
     }
 
-    public static function selectFormateur(){ 
+    public static function selectAllFormateurs(){ 
         $list =[];
         $db = Db::getInstance();
         $query = $db->prepare('SELECT * FROM users WHERE profil = "formateur" ');
@@ -27,7 +27,7 @@ class Admin {
         return $list;
     }
 
-    public static function selectEtudiant(){ 
+    public static function selectAllEtudiants(){ 
         $list =[];
         $db = Db::getInstance();
         $query = $db->prepare('SELECT * FROM users WHERE profil = "étudiant" ');
@@ -61,6 +61,7 @@ class Admin {
 
     public static function createEtudiant(){ 
         $db = Db::getInstance();
+        session_start();
         $nom = strip_tags($_POST['nom']);
         $prenom = strip_tags($_POST['prenom']);
         $mail = strip_tags($_POST['mail']);
@@ -76,7 +77,75 @@ class Admin {
             'profil' => 'étudiant',
             ]);
             $create = $query->fetchAll();
-        } 
-        header('Location: index.php?controller=admin&action=index');
+        }  
+        if($_SESSION['profil'] === 'administrateur'){
+            header('Location: index.php?controller=admin&action=index');
+        } elseif($_SESSION['profil'] === 'formateur'){
+            header('Location: index.php?controller=cours&action=index');
+        }
+    }
+
+    public static function deleteEtudiant($id){
+        $db = Db::getInstance();
+        session_start();
+        $id = intval($_GET['id']);
+        $query = $db->prepare('DELETE FROM users WHERE id_user = :id');
+        $query->execute([
+        'id' => $id,
+        ]);
+        $delete = $query->fetchAll();
+        if($_SESSION['profil'] === 'administrateur'){
+            header('Location: index.php?controller=admin&action=index');
+        } elseif($_SESSION['profil'] === 'formateur') {
+            header('Location: index.php?controller=cours&action=index');
+        }
+    }  
+
+    public static function deleteFormateur($id){
+        $db = Db::getInstance();
+        $id = intval($_GET['id']);
+        $query = $db->prepare('DELETE FROM users WHERE id_user = :id');
+        $query->execute([
+        'id' => $id,
+        ]);
+        $delete = $query->fetchAll();
+        header('Location: index.php?controller=admin&action=index');  
+    }
+
+    public static function selectEtudiant($id){ 
+        $db = Db::getInstance();
+        $id = intval($_GET['id']);
+        $query = $db->prepare('SELECT * FROM users WHERE id_user = :id');
+        $query->execute(['id' => $id]);
+       foreach($query->fetchAll() as $eleve) {
+        $item = new Admin($eleve['id_user'], $eleve['nom'], $eleve['prenom'], $eleve['email'], $eleve['mdp'], $eleve['profil']);
+        }
+       return $item;
+    }
+
+    public static function modifierEtudiant($id){
+        $db = Db::getInstance();
+        session_start();
+        $nom = strip_tags($_POST['nom']);
+        $prenom = strip_tags($_POST['prenom']);
+        $mail = strip_tags($_POST['mail']);
+        $mdp = strip_tags($_POST['mdp']);
+        $profil = strip_tags($_POST['profil']);
+        if(isset($nom) && !empty($nom) && isset($prenom) && !empty($prenom)) {
+            $query = $db -> prepare('UPDATE users SET nom = :nom, prenom = :prenom, email = :email, mdp = :mdp, profil = :profil  WHERE id_user = :id');
+            $query-> execute([
+                'id' => $id,
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'email' => $mail,
+                'mdp' => password_hash($mdp, PASSWORD_DEFAULT),
+                'profil' => $profil
+            ]);
+            $modify = $query->fetchAll();
+        } if($_SESSION['profil'] === 'administrateur'){
+            header('Location: index.php?controller=admin&action=index');
+        } elseif($_SESSION['profil'] === 'formateur') {
+            header('Location: index.php?controller=cours&action=index');
+        }
     }
 }

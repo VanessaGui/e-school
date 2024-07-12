@@ -40,9 +40,9 @@ class Accueil {
         } else if( $_SESSION['profil'] === 'formateur'){
           header('Location: index.php?controller=cours&action=index');
         } else if( $_SESSION['profil'] === 'étudiant') {
-          header('Location: index.php?controller=etudiant&action=index');
+          header('Location: index.php?controller=assigne&action=index');
         } else{ 
-          header('Location: index.php?controller=accueil&action=error');
+          header('Location: index.php?controller=accueil&action=error') ;
         }
       }
     }
@@ -68,4 +68,40 @@ class Accueil {
         header('Location: index.php?controller=accueil&action=index&ac');
       }
     }
+
+
+  public static function modifierProfil($id){
+      $db = Db::getInstance();
+      session_start();
+      $nom = strip_tags($_POST['nom']);
+      $prenom = strip_tags($_POST['prenom']);
+      $mail = strip_tags($_POST['mail']);
+      $mdp = strip_tags($_POST['mdp']);
+      $mdp2 = strip_tags($_POST['mdp2']);
+      if($_SESSION['profil'] === 'formateur'){
+        $profil = 'formateur';
+      }elseif($_SESSION['profil'] === 'administrateur'){
+        $profil = 'administrateur';
+      }else{
+        $profil= 'étudiant';
+      }
+      if(isset($nom) && !empty($nom) && isset($prenom) && !empty($prenom) && $mdp === $mdp2) {
+          $query = $db -> prepare('UPDATE users SET nom = :nom, prenom = :prenom, email = :email, mdp = :mdp, profil = :profil  WHERE id_user = :id');
+          $query-> execute([
+              'id' => $id,
+              'nom' => $nom,
+              'prenom' => $prenom,
+              'email' => $mail,
+              'mdp' => password_hash($mdp, PASSWORD_DEFAULT),
+              'profil' => $profil
+          ]);
+          $modify = $query->fetchAll();
+      } if($_SESSION['profil'] === 'étudiant'){
+          header('Location: index.php?controller=assigne&action=index');
+      } elseif($_SESSION['profil'] === 'formateur') {
+          header('Location: index.php?controller=cours&action=index');
+      } else {
+        header('Location: index.php?controller=admin&action=index');
+      }
+  }
 }

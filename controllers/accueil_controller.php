@@ -36,6 +36,15 @@
             header('Location: index.php?controller=accueil&action=index'); 
             exit();  
         }
+
+        public function profil() {
+            $selectProfil = Admin::selectEtudiant($_GET['id']);
+            require_once('views/etudiant/profil.php');
+        }
+
+        public function modifyProfil(){
+            $modifProfil = Accueil::modifierProfil($_GET['id']);
+        }
     }
 
 ?>

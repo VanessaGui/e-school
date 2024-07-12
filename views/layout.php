@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script type="module" src="scripts/script.js" ></script>
     <script src="https://cdn.tiny.cloud/1/b8m4cc9vao46ed6nxr44fan55hh9agksd6chwaptatj964uz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://kit.fontawesome.com/9465fee521.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php require_once('routes.php'); ?>
@@ -35,7 +36,6 @@
         { value: 'Email', title: 'Email' },
       ]
     });
-  
   </script>
 </body>
 </html>

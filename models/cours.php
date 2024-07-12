@@ -48,10 +48,10 @@ class Cours {
             ]);
             $modify = $query->fetchAll();
         }
-          header('Location: index.php?controller=cours&action=index&id='.$id); 
-      }
+          header('Location: index.php?controller=cours&action=modifCours&id='.$id); 
+    }
 
-      public static function createCours(){ 
+    public static function createCours(){ 
         $db = Db::getInstance();
         session_start();
         $titre = strip_tags($_POST['titre']);
@@ -67,5 +67,34 @@ class Cours {
             $create = $query->fetchAll();
         } 
         header('Location: index.php?controller=cours&action=ajoutCours');
+    }
+
+    public static function deleteCours($id){
+        $db = Db::getInstance();
+        $id = intval($_GET['id']);
+        $query = $db->prepare('DELETE FROM cours WHERE id_cours = :id');
+        $query->execute([
+        'id' => $id,
+        ]);
+        $delete = $query->fetchAll();
+        if($_SESSION['profil'] === 'administrateur'){
+        header('Location: index.php?controller=admin&action=index');
+        } else {
+            header('Location: index.php?controller=cours&action=index');
+        }
+    }
+
+    public static function coursAssigne(){
+        $list =[];
+        $db = Db::getInstance();
+        session_start();
+        $query = $db->prepare('SELECT * FROM cours c LEFT JOIN assigne a ON c.id_cours = a.id_cours WHERE a.id_user = :id_user');
+        $query->execute([
+            'id_user' => $_SESSION['id_user'],
+        ]);
+        foreach($query->fetchAll() as $cours) {
+        $list[] = new Cours($cours['id_cours'],$cours['titre'], $cours['description'], $cours['id_user']);
+        }
+        return $list;  
     }
 }

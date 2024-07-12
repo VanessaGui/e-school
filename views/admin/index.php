@@ -12,8 +12,8 @@ require_once('header.php');?>
                     <tr>
                     <td><?= $formateur->prenom?></td>
                         <td><?= $formateur->nom?></td>
-                        <td><a class="table-button" href="?controller=admin&action=modifFormateur&id=<?=$formateur->id_user?>">Modifier</a></td>
-                        <td><a class="suppr-button" href="?controller=admin&action=supprimFormateur&id=<?=$formateur->id_user?>">Supprimer</a></td>
+                        <td><a class="table-button" href="?controller=admin&action=modifEtudiant&id=<?=$formateur->id_user?>">Modifier</a></td>
+                        <td><a class="suppr-button" href="?controller=admin&action=supprimEtudiant&id=<?=$formateur->id_user?>">Supprimer</a></td>
                         <?php }?>
                     </tr>
                 </tbody>

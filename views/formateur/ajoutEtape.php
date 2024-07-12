@@ -35,5 +35,4 @@ require_once('views/admin/header.php');?>
         <div class="form-explain explain">
             <p>Les champs marqués d'un (*) sont obligatoires.</p>
         </div>
-        <a class="button button-etape" href="?controller=cours&action=ajoutEtape">Ajouter une étape</a>
 </main>
