@@ -16,6 +16,9 @@ require_once('header.php');?>
     } 
     if (isset($_GET['modea'])){
         echo "<p class='message-validate'>Vous avez modifié un utilisateur</p>";
+    } 
+    if (isset($_GET['mpa'])){
+        echo "<p class='message-validate'>Vous avez modifié votre profil</p>";
     } ?>
    <div class="container">
     <div class="container1">

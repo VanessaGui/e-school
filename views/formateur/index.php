@@ -13,6 +13,9 @@ require_once('views/admin/header.php'); ?>
     } 
     if (isset($_GET['modef'])){
         echo "<p class='message-validate'>Vous avez modifié un étudiant</p>";
+    } 
+    if (isset($_GET['mpf'])){
+        echo "<p class='message-validate'>Vous avez modifié votre profil</p>";
     } ?>
     <div class="container">
         <div class="container1">

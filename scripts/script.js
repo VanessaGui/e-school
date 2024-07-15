@@ -63,18 +63,18 @@ systemNotes.forEach(note => {
       }
      
     });
-    star.addEventListener('mouseover', function() {
-      stars.forEach(s => s.classList.remove('staryellow'));
-      this.classList.add('staryellow');
-      let previousSibling = this.previousElementSibling;
-      while (previousSibling && previousSibling.classList.contains('star')) {
-          previousSibling.classList.add('staryellow');
-          previousSibling = previousSibling.previousElementSibling;
-      }
-    });
+    // star.addEventListener('mouseover', function() {
+    //   stars.forEach(s => s.classList.remove('staryellow'));
+    //   this.classList.add('staryellow');
+    //   let previousSibling = this.previousElementSibling;
+    //   while (previousSibling && previousSibling.classList.contains('star')) {
+    //       previousSibling.classList.add('staryellow');
+    //       previousSibling = previousSibling.previousElementSibling;
+    //   }
+    // });
 
-    star.addEventListener('mouseleave', function() {
-      stars.forEach(s => s.classList.remove('staryellow'))
-    });
+    // star.addEventListener('mouseleave', function() {
+    //   stars.forEach(s => s.classList.remove('staryellow'))
+    // });
   });
 });

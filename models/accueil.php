@@ -97,11 +97,11 @@ class Accueil {
           ]);
           $modify = $query->fetchAll();
       } if($_SESSION['profil'] === 'étudiant'){
-          header('Location: index.php?controller=assigne&action=index');
+          header('Location: index.php?controller=assigne&action=index&mpe');
       } elseif($_SESSION['profil'] === 'formateur') {
-          header('Location: index.php?controller=cours&action=index');
+          header('Location: index.php?controller=cours&action=index&mpf');
       } else {
-        header('Location: index.php?controller=admin&action=index');
+        header('Location: index.php?controller=admin&action=index&mpa');
       }
   }
 }

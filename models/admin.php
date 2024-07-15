@@ -97,7 +97,7 @@ class Admin {
         if($_SESSION['profil'] === 'administrateur'){
             header('Location: index.php?controller=admin&action=index&dea');
         } elseif($_SESSION['profil'] === 'formateur') {
-            header('Location: index.php?controller=cours&action=indexdef');
+            header('Location: index.php?controller=cours&action=index&def');
         }
     }  
 

@@ -22,7 +22,6 @@ class CoursController{
     public function voirCours() {
         $displayCours= Cours::selectCours($_GET['id']);
         $displayEtape = Etape::selectEtape($_GET['id']);
-        $displayNote = Commentaire::selectNote();
         $displayAssigne = Assigne::selectAssigne($_GET['id']);
         require_once('views/formateur/voirCours.php');
     }
@@ -40,6 +39,13 @@ class CoursController{
 
     public function modifyEtape(){
         $modifEtape = Etape::modifierEtape($_GET['id']);
+    }
+
+    public function etapeDetail() {
+        $etape = Etape::findEtape($_GET['id']);
+        $displayNote = Commentaire::selectNote();
+        //$displayNote = Commentaire::selectNoteByEtape($id_etape);
+        require_once('views/formateur/etapeDetail.php');
     }
 
     public function assigner(){

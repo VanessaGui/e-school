@@ -27,6 +27,16 @@ class Etape {
             }
            return $list;
     }
+
+    public static function findEtape($id) {
+        $db = Db::getInstance();
+        $query = $db->prepare('SELECT * FROM etapes WHERE id_etape = :id');
+        $query->execute(['id' => $_GET['id']]);
+        $etape = $query->fetch();
+        
+        return new Etape($etape['id_etape'], $etape['titre'], $etape['description'], $etape['contenu'], $etape['id_user'], $etape['id_cours']);
+    }
+
     public static function modifierEtape($id){
         $db = Db::getInstance();
         session_start();
@@ -96,6 +106,6 @@ class Etape {
             ]);
             $create = $query->fetchAll();
        }
-       header('Location: index.php?controller=cours&action=voirCours&id='.$id_cours);
+       header('Location: index.php?controller=cours&action=etapeDetail&id='.$id);
     }
 }
