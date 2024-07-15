@@ -22,6 +22,7 @@ class CoursController{
     public function voirCours() {
         $displayCours= Cours::selectCours($_GET['id']);
         $displayEtape = Etape::selectEtape($_GET['id']);
+        $displayNote = Commentaire::selectNote();
         $displayAssigne = Assigne::selectAssigne($_GET['id']);
         require_once('views/formateur/voirCours.php');
     }
@@ -46,6 +47,10 @@ class CoursController{
         $nonAssigne = Assigne::selectEtudiants($_GET['id']);
         $displayCours= Cours::selectCours($_GET['id']);
         require_once('views/etudiant/assigne.php');
+    }
+
+    public function avisEtape(){
+        $avis = Etape::noterEtape($_GET['id']);
     }
 }
 

@@ -1,7 +1,14 @@
 <?php session_start(); 
 require_once('views/admin/header.php');?>
 <main class="main">
+    <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
     <h1>Modifier le cours</h1>
+    <?php if (isset($_GET['modC'])){
+        echo "<p class='message-validate'>Vous avez bien modifié le cours</p>";
+    } 
+    if (isset($_GET['me'])){
+        echo "<p class='message-validate'>Vous avez bien modifié une étape</p>";
+    } ?>
         <div>
             <form action="index.php?controller=cours&action=modifyCours&id=<?=$displayCours->id_cours?>" method="post">
                 <div class="form-content">   

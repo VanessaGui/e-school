@@ -30,6 +30,7 @@
         require_once('models/cours.php');
         require_once('models/etape.php');
         require_once('models/assigne.php');
+        require_once('models/commentaire.php');
         $controller = new coursController();
       break;
     }
@@ -38,9 +39,9 @@
   }
 
   $controllers = array('accueil' => ['accueil', 'connect', 'creerCompte', 'createCompte', 'error', 'index','login', 'logout', 'mentions', 'modifyProfil', 'profil'],
-                       'admin' => ['ajoutEtudiant', 'creerEtudiant', 'createEtudiant', 'ajoutFormateur', 'creerFormateur', 'createFormateur', 'displayEtudiants', 'header', 'index', 'modifEtudiant', 'modifyEtudiant', 'selectEtudiant', 'selectAllEtudiants', 'supprimEtudiant', 'supprimFormateur'],
+                       'admin' => ['ajoutEtudiant', 'creerEtudiant', 'createEtudiant', 'ajoutFormateur', 'creerFormateur', 'createFormateur', 'displayEtudiants', 'header', 'index', 'modifEtudiant', 'modifFormateur', 'modifyEtudiant', 'selectEtudiant', 'selectAllEtudiants', 'supprimEtudiant', 'supprimFormateur'],
                        'assigne' => ['assigne','assignerCours', 'index'],
-                       'cours' => ['ajoutCours', 'ajoutEtape', 'assigner', 'creerCours', 'creerEtape', 'index', 'voirCours', 'modifCours', 'modifyCours', 'modifyEtape', 'supprimCours']);
+                       'cours' => ['ajoutCours', 'ajoutEtape', 'assigner', 'avisEtape', 'creerCours', 'creerEtape', 'index', 'voirCours', 'modifCours', 'modifyCours', 'modifyEtape', 'supprimCours']);
 
 
   if (array_key_exists($controller, $controllers)) {

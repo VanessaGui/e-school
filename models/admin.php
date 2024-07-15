@@ -56,7 +56,7 @@ class Admin {
             ]);
             $create = $query->fetchAll();
         } 
-        header('Location: index.php?controller=admin&action=index');
+        header('Location: index.php?controller=admin&action=index&cf');
     }
 
     public static function createEtudiant(){ 
@@ -79,9 +79,9 @@ class Admin {
             $create = $query->fetchAll();
         }  
         if($_SESSION['profil'] === 'administrateur'){
-            header('Location: index.php?controller=admin&action=index');
+            header('Location: index.php?controller=admin&action=index&cea');
         } elseif($_SESSION['profil'] === 'formateur'){
-            header('Location: index.php?controller=cours&action=index');
+            header('Location: index.php?controller=cours&action=index&cef');
         }
     }
 
@@ -95,9 +95,9 @@ class Admin {
         ]);
         $delete = $query->fetchAll();
         if($_SESSION['profil'] === 'administrateur'){
-            header('Location: index.php?controller=admin&action=index');
+            header('Location: index.php?controller=admin&action=index&dea');
         } elseif($_SESSION['profil'] === 'formateur') {
-            header('Location: index.php?controller=cours&action=index');
+            header('Location: index.php?controller=cours&action=indexdef');
         }
     }  
 
@@ -109,7 +109,7 @@ class Admin {
         'id' => $id,
         ]);
         $delete = $query->fetchAll();
-        header('Location: index.php?controller=admin&action=index');  
+        header('Location: index.php?controller=admin&action=index&df');  
     }
 
     public static function selectEtudiant($id){ 
@@ -143,9 +143,9 @@ class Admin {
             ]);
             $modify = $query->fetchAll();
         } if($_SESSION['profil'] === 'administrateur'){
-            header('Location: index.php?controller=admin&action=index');
+            header('Location: index.php?controller=admin&action=index&modea');
         } elseif($_SESSION['profil'] === 'formateur') {
-            header('Location: index.php?controller=cours&action=index');
+            header('Location: index.php?controller=cours&action=index&modef');
         }
     }
 }

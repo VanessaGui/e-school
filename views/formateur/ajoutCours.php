@@ -1,7 +1,11 @@
 <?php session_start(); 
 require_once('views/admin/header.php');?>
 <main class="main">
+    <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
     <h1>Ajouter un cours</h1>
+    <?php if (isset($_GET['ac'])){
+        echo "<p class='message-validate'>Vous avez ajouté un cours</p>";
+    } ?>
         <div>
             <form action="index.php?controller=cours&action=creerCours" method="post">
                 <div class="form-content">   

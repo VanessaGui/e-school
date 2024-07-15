@@ -2,6 +2,7 @@
 require_once('header.php');?>
 
 <main class="main-column">
+    <a class="button-retour" href="?controller=admin&action=index">&#60; Retour</a>
     <h1>Ajouter un formateur</h1>
     <div class="connect">
         <form action="index.php?controller=admin&action=creerFormateur" method="post">
@@ -26,7 +27,6 @@ require_once('header.php');?>
                 <div class="form-submit">
                     <input class="form-button"type="submit" value="Ajouter"/>
                 </div>
-            
         </form>
         <div class="form-explain">
             <p>Les champs marqués d'un (*) sont obligatoires.</p>

@@ -1,7 +1,11 @@
 <?php session_start(); 
 require_once('views/admin/header.php');?>
 <main class="main">
+    <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
     <h1>Ajouter une étape</h1>
+    <?php if (isset($_GET['ae'])){
+        echo "<p class='message-validate'>Vous avez ajouté une étape</p>";
+    } ?>
         <div id="form" class="form-etape">
             <form action="index.php?controller=cours&action=creerEtape" method="post">
                 <div class="form-content2">  

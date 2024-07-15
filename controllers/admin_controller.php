@@ -32,7 +32,10 @@
         public function modifyEtudiant(){
             $modifEtudiant = Admin::modifierEtudiant($_GET['id']);
         }
-        
+        public function modifFormateur(){
+            $selectEtudiant = Admin::selectEtudiant($_GET['id']);
+            require_once('views/admin/modifierFormateur.php');   
+        }  
     }
 
 ?>

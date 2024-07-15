@@ -1,6 +1,7 @@
 <?php session_start(); 
 require_once('views/admin/header.php');?>
 <main class="voir">
+    <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
     <h1>Assigner un étudiant à <?=$displayCours->titre?></h1>  
     <h2>Liste des étudiants non assignés</h2>
     <div>

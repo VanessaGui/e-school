@@ -2,6 +2,18 @@
 require_once('views/admin/header.php'); ?>
 <main class="main">
     <h1>Bienvenue sur l'espace formateur</h1>
+    <?php if (isset($_GET['dc'])){
+        echo "<p class='message-validate'>Vous avez supprimé un cours</p>";
+    } 
+    if (isset($_GET['cef'])){
+        echo "<p class='message-validate'>Vous avez ajouté un étudiant</p>";
+    } 
+    if (isset($_GET['def'])){
+        echo "<p class='message-validate'>Vous avez supprimé un étudiant</p>";
+    } 
+    if (isset($_GET['modef'])){
+        echo "<p class='message-validate'>Vous avez modifié un étudiant</p>";
+    } ?>
     <div class="container">
         <div class="container1">
             <h2>Cours</h2>

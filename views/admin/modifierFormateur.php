@@ -1,12 +1,8 @@
 <?php session_start();
 require_once('views/admin/header.php');?>
 <main class="main">
-    <?php if($_SESSION['profil'] == 'administrateur'){?>
     <a class="button-retour" href="?controller=admin&action=index">&#60; Retour</a>
-    <?php } else {?>
-    <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
-    <?php  } ?>
-    <h1>Modifier un étudiant</h1>
+    <h1>Modifier un formateur</h1>
         <div class="connect">
             <form action="index.php?controller=admin&action=modifyEtudiant&id=<?=$selectEtudiant->id_user?>" method="post">
                 <div class="form-content">   
@@ -22,7 +18,6 @@ require_once('views/admin/header.php');?>
                         <label for="mail">email *</label>
                         <input type="email" name="mail" required="required" value="<?php echo $selectEtudiant->email?>">
                     </div>
-                    <?php if($_SESSION['profil'] == 'administrateur') { ?>
                     <div class="form-label">
                         <label for="profil">Choisir un profil *</label>
                         <select name="profil" required="required">
@@ -32,7 +27,6 @@ require_once('views/admin/header.php');?>
                             <option>étudiant</option>
                        </select>
                     </div>
-                    <?php } ?>
                 </div>
                 <div class="form-submit">
                     <input class="form-button"type="submit" value="Modifier"/>

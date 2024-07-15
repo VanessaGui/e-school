@@ -1,6 +1,13 @@
 <?php session_start(); 
 require_once('views/admin/header.php');?>
 <main class="main">
+    <?php if($_SESSION['profil'] == 'administrateur'){?>
+    <a class="button-retour" href="?controller=admin&action=index">&#60; Retour</a>
+    <?php } elseif($_SESSION['profil'] == 'formateur') { ?>
+    <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
+    <?php } else { ?>
+    <a class="button-retour" href="?controller=assigne&action=index">&#60; Retour</a>
+    <?php } ?>
     <h1>Modifier mon profil</h1>
         <div class="connect">
             <form action="index.php?controller=accueil&action=modifyProfil&id=<?=$selectProfil->id_user?>" method="post">

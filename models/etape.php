@@ -47,8 +47,8 @@ class Etape {
             ]);
             $modify = $query->fetchAll();
         }
-          header('Location: index.php?controller=cours&action=modifCours&id='.$id); 
-      }
+          header('Location: index.php?controller=cours&action=modifCours&id='.$id.'&me'); 
+    }
 
       public static function createEtape(){ 
         $db = Db::getInstance();
@@ -59,7 +59,6 @@ class Etape {
             'titre' => $_POST['cours'],
             ]);
         $cours = $req->fetchAll();
-
         foreach($cours as $id){
           $id_cours = $id['id_cours'];
         }
@@ -78,6 +77,25 @@ class Etape {
             ]);
             $create = $query->fetchAll();
         } 
-        header('Location: index.php?controller=cours&action=ajoutEtape');
+        header('Location: index.php?controller=cours&action=ajoutEtape&ae');
+    }
+
+    public static function noterEtape($id){
+        $db = Db::getInstance();
+        session_start();
+       $note = $_POST['rating'];
+       $avis = $_POST['commentaire'];
+       $id_cours = $_POST['coursid'];
+       if(isset($note) && !empty($note) && isset($avis) && !empty($avis)) {
+        $query = $db->prepare('INSERT INTO commentaires (avis, notation, id_etape, id_user) VALUES (:avis, :notation, :id_etape, :id_user)');
+            $query->execute([
+            'avis' => $avis,
+            'notation' => $note,
+            'id_etape' => $id,
+            'id_user' => $_SESSION['id_user']
+            ]);
+            $create = $query->fetchAll();
+       }
+       header('Location: index.php?controller=cours&action=voirCours&id='.$id_cours);
     }
 }

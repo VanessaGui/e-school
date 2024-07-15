@@ -48,7 +48,7 @@ class Cours {
             ]);
             $modify = $query->fetchAll();
         }
-          header('Location: index.php?controller=cours&action=modifCours&id='.$id); 
+          header('Location: index.php?controller=cours&action=modifCours&id='.$id.'&modC'); 
     }
 
     public static function createCours(){ 
@@ -66,7 +66,7 @@ class Cours {
             ]);
             $create = $query->fetchAll();
         } 
-        header('Location: index.php?controller=cours&action=ajoutCours');
+        header('Location: index.php?controller=cours&action=ajoutCours&ac');
     }
 
     public static function deleteCours($id){
@@ -80,7 +80,7 @@ class Cours {
         if($_SESSION['profil'] === 'administrateur'){
         header('Location: index.php?controller=admin&action=index');
         } else {
-            header('Location: index.php?controller=cours&action=index');
+            header('Location: index.php?controller=cours&action=index&dc');
         }
     }
 
