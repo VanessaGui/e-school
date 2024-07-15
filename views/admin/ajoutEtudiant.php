@@ -1,6 +1,5 @@
 <?php session_start(); 
 require_once('header.php');?>
-
 <main class="main-column">
     <?php if($_SESSION['profil'] == 'administrateur') { ?>
     <a class="button-retour" href="?controller=admin&action=index">&#60; Retour</a>

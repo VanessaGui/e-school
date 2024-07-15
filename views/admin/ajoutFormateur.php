@@ -1,6 +1,5 @@
 <?php session_start(); 
 require_once('header.php');?>
-
 <main class="main-column">
     <a class="button-retour" href="?controller=admin&action=index">&#60; Retour</a>
     <h1>Ajouter un formateur</h1>

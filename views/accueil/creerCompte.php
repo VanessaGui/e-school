@@ -1,5 +1,4 @@
 <?php require_once('header.php'); ?>
-
 <main class="main-column">
     <h1>Créer un compte</h1>
     <div class="connect">

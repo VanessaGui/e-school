@@ -1,7 +1,11 @@
 <?php
 require_once('views/admin/header.php'); ?>
 <main class="voir">
+    <?php if($_SESSION['profil'] == 'formateur') { ?>
     <a class="button-retour" href="?controller=cours&action=index">&#60; Retour</a>
+    <?php } else { ?>
+    <a class="button-retour" href="?controller=assigne&action=index">&#60; Retour</a>
+    <?php } ?>
     <h1><?php echo $displayCours->titre; ?></h1>
     <p><?php echo $displayCours->description; ?></p>
     <?php foreach($displayEtape as $etape){ ?>

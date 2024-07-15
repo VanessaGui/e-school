@@ -4,7 +4,7 @@
     <p>Pour pouvoir utiliser notre plateforme, connectez-vous ou créez un compte</p>
     <?php
         if (isset($_GET['ac'])) {
-            echo "<p class='message-creer'>Le compte a bien été créé, connectez-vous pour accéder à votre espace</p>";
+            echo "<p class='message-validate'>Le compte a bien été créé, connectez-vous pour accéder à votre espace</p>";
         }
     ?>
     <div class="connect">
