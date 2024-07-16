@@ -1,7 +1,6 @@
 <?php
 require_once('views/admin/header.php'); ?>
 <main class="voir">
-
     <a class="button-retour" href="?controller=cours&action=voirCours&id=<?php echo $etape->id_cours; ?>">&#60; Retour</a>
     <h1><?php echo $etape->titre; ?></h1>
     <p><?php echo $etape->description; ?></p>
@@ -53,4 +52,16 @@ require_once('views/admin/header.php'); ?>
                 </form>
         <?php } ?>
     <?php } ?>
+    <h2 class="h2-avis">Avis des étudiants</h2>
+    <div class="container-all-cours">
+    <?php foreach($displayAvis as $avis){?>
+    <div class="container-cours">
+        <div class="bloc-avis">
+            <div class="nom-avis"><?=$avis->prenom.' '.$avis->nom?></div>
+            <div>Note: <?=$avis->notation?> /5</div> 
+        </div>
+        <div>" <?=$avis->avis?> "</div>
+    </div>
+    <?php } ?>
+    </div>
 </main>

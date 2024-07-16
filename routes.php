@@ -31,6 +31,7 @@
         require_once('models/etape.php');
         require_once('models/assigne.php');
         require_once('models/commentaire.php');
+        require_once('models/avis.php');
         $controller = new coursController();
       break;
     }

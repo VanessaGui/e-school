@@ -347,7 +347,6 @@ h3 {
 .voir h2{
     align-self: flex-start;
 }
-
 .container{
     display: flex;
     justify-content: center;
@@ -419,10 +418,23 @@ h3 {
     margin-top: 30px;
     align-self: flex-start;
 }
+.h2-avis{
+    color: rgb(27, 151, 165);
+    margin-top: 30px;
+}
+.bloc-avis{
+    display: flex;
+   justify-content: space-between;
+    gap: 5px;
+}
+.nom-avis{
+    padding: 0 0 10px;
+    color: #227c9d;
+}
+
 table{
     margin-bottom: 30px;
 }
-
 tr{
    display: flex;
    align-items: center;
@@ -517,5 +529,5 @@ td{
 	cursor: pointer;
 }
 .checkboxes {
-    display: none;
+    visibility: hidden;
 }
