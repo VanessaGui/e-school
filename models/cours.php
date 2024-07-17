@@ -3,13 +3,11 @@ class Cours {
     public $id_cours;
     public $titre;
     public $description;
-    public $id_user;
    
-    public function __construct($id_cours, $titre, $description, $id_user) {
+    public function __construct($id_cours, $titre, $description) {
         $this->id_cours = $id_cours;
         $this->titre = $titre;
         $this->description = $description;
-        $this->id_user = $id_user;
     }
 
     public static function selectAllCours(){ 
@@ -18,7 +16,7 @@ class Cours {
         $query = $db->prepare('SELECT * FROM cours');
         $query->execute();
         foreach($query->fetchAll() as $cours) {
-        $list[] = new Cours($cours['id_cours'],$cours['titre'], $cours['description'], $cours['id_user']);
+        $list[] = new Cours($cours['id_cours'],$cours['titre'], $cours['description']);
         }
         return $list;
     }
@@ -28,7 +26,7 @@ class Cours {
         $query = $db->prepare('SELECT * FROM cours WHERE id_cours = :id');
         $query->execute(['id' => $id]);
        foreach($query->fetchAll() as $cours) {
-        $item = new Cours($cours['id_cours'], $cours['titre'], $cours['description'], $cours['id_user']);
+        $item = new Cours($cours['id_cours'], $cours['titre'], $cours['description']);
         }
        return $item;
     }
@@ -93,7 +91,21 @@ class Cours {
             'id_user' => $_SESSION['id_user'],
         ]);
         foreach($query->fetchAll() as $cours) {
-        $list[] = new Cours($cours['id_cours'],$cours['titre'], $cours['description'], $cours['id_user']);
+        $list[] = new Cours($cours['id_cours'],$cours['titre'], $cours['description']);
+        }
+        return $list;  
+    }
+
+    public static function coursNonAssigne($id){
+        $list =[];
+        $db = Db::getInstance();
+        session_start();
+        $query = $db->prepare(' SELECT c.id_cours, c.titre, c.description FROM cours c WHERE c.id_cours NOT IN (SELECT a.id_cours FROM assigne a WHERE a.id_user = :id_user)');
+        $query->execute([
+            'id_user' => $id,
+        ]);
+        foreach($query->fetchAll() as $cours) {
+        $list[] = new Cours($cours['id_cours'],$cours['titre'], $cours['description']);
         }
         return $list;  
     }

@@ -32,3 +32,7 @@ require_once('views/admin/header.php');?>
             <p>Les champs marqués d'un (*) sont obligatoires.</p>
         </div>
     </div>
+    <?php if($_SESSION['profil'] == 'formateur'){ ?>
+        <a class="button" href="?controller=assigne&action=assigne&id=<?=$selectEtudiant->id_user?>">Assigner un cours</a>
+    <?php } ?>
+   

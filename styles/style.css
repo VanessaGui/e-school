@@ -390,6 +390,9 @@ h3 {
         "wdth" 100;
     color: rgb(7, 2, 13);;
 }
+.input-cours{
+    width: 300px;
+}
 .container-button{
     margin: 10vh 0;
     align-self: center;

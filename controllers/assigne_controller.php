@@ -10,8 +10,15 @@
         }
 
         public static function assigne(){
-
+            $selectEtudiant = Admin::selectEtudiant($_GET['id']);
+            $coursNonAssigne = Cours::coursNonAssigne($_GET['id']);
+            require_once('views/formateur/assignerCours.php');
         }
+
+        public function assignerCoursEleve(){
+            $coursAssigne = Assigne::assignerCoursEleve($_GET['id']);
+        }
+
     }
 
 ?>

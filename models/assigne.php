@@ -46,4 +46,17 @@ class Assigne{
         }
        return $list;  
     }
+
+    public static function assignerCoursEleve($id){
+        $db = Db::getInstance();
+        $id = intval($_GET['id']);
+        $postid= $_POST['postid'];
+        $query = $db->prepare('INSERT INTO assigne (id_user, id_cours) VALUES (:id_user, :id_cours)');
+        $query->execute([
+        'id_user' => $postid,
+        'id_cours' => $id
+        ]);
+        $assigne = $query->fetchAll();
+        header('Location: index.php?controller=assigne&action=assigne&id='.$postid);
+    }
 }

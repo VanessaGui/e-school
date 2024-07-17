@@ -41,7 +41,7 @@
 
   $controllers = array('accueil' => ['accueil', 'connect', 'creerCompte', 'createCompte', 'error', 'index','login', 'logout', 'mentions', 'modifyProfil', 'profil'],
                        'admin' => ['ajoutEtudiant', 'creerEtudiant', 'createEtudiant', 'ajoutFormateur', 'creerFormateur', 'createFormateur', 'displayEtudiants', 'header', 'index', 'modifEtudiant', 'modifFormateur', 'modifyEtudiant', 'selectEtudiant', 'selectAllEtudiants', 'supprimEtudiant', 'supprimFormateur'],
-                       'assigne' => ['assigne','assignerCours', 'index'],
+                       'assigne' => ['assigne','assignerCours', 'assignerCoursEleve', 'index'],
                        'cours' => ['ajoutCours', 'ajoutEtape', 'assigner', 'avisEtape', 'creerCours', 'creerEtape', 'etapeDetail', 'index', 'voirCours', 'modifCours', 'modifyCours', 'modifyEtape', 'supprimCours']);
 
 
