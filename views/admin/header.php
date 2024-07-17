@@ -1,5 +1,9 @@
 <header class="header-users">
-   <?php if($_SESSION['profil'] === "administrateur"){ ?>
+   <?php 
+   if(empty($_SESSION)){
+      header('Location: index.php?controller=accueil&action=index');
+   }
+   if($_SESSION['profil'] === "administrateur"){ ?>
       <a href="?controller=admin&action=index"><img src="img/e-school.png" alt="logo de la plateforme"></a>
    <?php } elseif($_SESSION['profil'] === "formateur"){ ?>
       <a href="?controller=cours&action=index"><img src="img/e-school.png" alt="logo de la plateforme"></a>
