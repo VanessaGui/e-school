@@ -112,7 +112,6 @@ footer{
     gap: 5%;
     margin:30px 0 15px 0;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -124,7 +123,6 @@ footer a {
 }
 h1{
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     font-variation-settings:
@@ -154,6 +152,12 @@ h3 {
     color:  #b33951;
     align-self: flex-start;
     margin: 20px auto auto 100px;
+}
+.mentions{
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px 30px;
+    gap: 30px;
 }
 .header{
     display: flex;
@@ -205,7 +209,6 @@ h3 {
     gap: 25px;
     color: #07020d;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -230,7 +233,6 @@ h3 {
     flex-direction: column;
     align-items: center;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -253,7 +255,6 @@ h3 {
 }
 .connect a{
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -300,7 +301,6 @@ h3 {
 }
 .form-button{
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -332,7 +332,6 @@ h3 {
     flex-direction: column;
     align-items: center;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -343,7 +342,6 @@ h3 {
     display: flex;
     flex-direction: column;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -386,7 +384,6 @@ h3 {
 .container-input .input{
     border: none;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -403,6 +400,16 @@ h3 {
     gap: 10px; 
     gap: 30px;
     margin: 0 10vw 10vh;
+}
+.dernier-cours{
+    margin-bottom: 30px;
+}
+.cours-consulte{
+    text-decoration: none;
+    color: #07020d;
+    align-self: flex-start;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 .container-cours{
     width: 20vw;
@@ -465,7 +472,6 @@ td{
 .table-button, .suppr-button{
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:

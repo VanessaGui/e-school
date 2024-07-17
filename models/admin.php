@@ -130,7 +130,7 @@ class Admin {
         $prenom = strip_tags($_POST['prenom']);
         $mail = strip_tags($_POST['mail']);
         $mdp = strip_tags($_POST['mdp']);
-        $profil = strip_tags($_POST['profil']);
+        $profil = $_POST['postid'];
         if(isset($nom) && !empty($nom) && isset($prenom) && !empty($prenom)) {
             $query = $db -> prepare('UPDATE users SET nom = :nom, prenom = :prenom, email = :email, mdp = :mdp, profil = :profil  WHERE id_user = :id');
             $query-> execute([

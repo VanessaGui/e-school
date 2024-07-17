@@ -64,3 +64,26 @@ systemNotes.forEach(note => {
     });
   });
 });
+
+//local storage
+let cours = document.querySelectorAll('.container-cours');
+
+for (let i = 0; i < cours.length; i++) {
+  cours[i].addEventListener("click", function() {
+    localStorage.removeItem('cours');
+    localStorage.setItem('cours', cours[i]);
+  });
+}
+
+let dernierCours = document.querySelector('.dernier-cours');
+
+document.addEventListener('DOMContentLoaded', function() {
+  if(localStorage.getItem('cours')){
+  let a = document.createElement('a');
+  a.classList.add('cours-consulte');
+  a.getAttribute('href');
+  a.setAttribute('href', localStorage.getItem('cours'));
+  a.innerHTML = '&#10148; Reprendre le dernier cours consulté'; 
+  dernierCours.appendChild(a); 
+}
+});

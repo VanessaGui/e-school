@@ -18,15 +18,7 @@ require_once('views/admin/header.php');?>
                         <label for="mail">email *</label>
                         <input type="email" name="mail" required="required" value="<?php echo $selectEtudiant->email?>">
                     </div>
-                    <div class="form-label">
-                        <label for="profil">Choisir un profil *</label>
-                        <select name="profil" required="required">
-                            <option selected>--choisir--</option>
-                            <option>administrateur</option>
-                            <option>formateur</option>
-                            <option>étudiant</option>
-                       </select>
-                    </div>
+                    <input type="hidden" name="postid" value="<?php echo $selectEtudiant->profil?>">
                 </div>
                 <div class="form-submit">
                     <input class="form-button"type="submit" value="Modifier"/>
