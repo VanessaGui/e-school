@@ -98,6 +98,14 @@ hr{
     background-color: #b33951;
     border: none;
 }
+.separate{
+    width: 75%;
+    height: 2px;
+    background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(90deg, #227c9d, #227c9d);
+    background-size: 20px 2px;
+    border: none;
+    margin-top: 20px;
+}
 footer{
     display: flex;
     justify-content: center;
@@ -418,13 +426,21 @@ h3 {
     margin-top: 30px;
     align-self: flex-start;
 }
-.h2-avis{
-    color: rgb(27, 151, 165);
+.container-title{ 
+    display: flex;
+    gap: 50px;
     margin-top: 30px;
+    font-size: 20px;
+}
+.h2-avis{
+    color: rgb(27, 151, 165);   
+}
+.moyenne-avis{
+    color: #07020d;   
 }
 .bloc-avis{
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     gap: 5px;
 }
 .nom-avis{

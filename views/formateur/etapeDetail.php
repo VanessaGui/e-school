@@ -51,8 +51,17 @@ require_once('views/admin/header.php'); ?>
                     </div>
                 </form>
         <?php } ?>
-    <?php } ?>
-    <h2 class="h2-avis">Avis des étudiants</h2>
+    <?php } if($displayAvis){ ?>
+    <hr class="separate" />
+    <div class="container-title">
+        <h2 class="h2-avis">Avis des étudiants</h2>
+        <div class="moyenne-avis">Note moyenne:  <?=$moyenne?> /5</div>
+        <?php if($moyenne >= 3){ ?>
+            <div>&#128077;</div>
+        <?php } else { ?>
+            <div>&#128078;</div>
+        <?php } ?>
+    </div>
     <div class="container-all-cours">
     <?php foreach($displayAvis as $avis){?>
     <div class="container-cours">
@@ -62,6 +71,6 @@ require_once('views/admin/header.php'); ?>
         </div>
         <div>" <?=$avis->avis?> "</div>
     </div>
-    <?php } ?>
+    <?php } }?>
     </div>
 </main>

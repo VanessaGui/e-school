@@ -45,6 +45,7 @@ class CoursController{
         $etape = Etape::findEtape($_GET['id']);
         $displayNote = Commentaire::selectNote();
         $displayAvis = Avis::selectAvis($_GET['id']);
+        $moyenne = Commentaire::moyenneNote($_GET['id']);
         require_once('views/formateur/etapeDetail.php');
     }
 

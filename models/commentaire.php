@@ -28,4 +28,12 @@ class Commentaire {
         return $list;
     }
 
+    public static function moyenneNote($id){
+        $db = Db::getInstance();
+        $id = intval($_GET['id']);
+        $query = $db->prepare('SELECT ROUND(AVG(notation), 1) as moyenne FROM commentaires WHERE id_etape = :id');
+        $query->execute(['id' => $id]);
+        $avg = $query->fetch();
+        return $avg['moyenne'];
+    }
 }

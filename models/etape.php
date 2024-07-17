@@ -33,7 +33,6 @@ class Etape {
         $query = $db->prepare('SELECT * FROM etapes WHERE id_etape = :id');
         $query->execute(['id' => $_GET['id']]);
         $etape = $query->fetch();
-        
         return new Etape($etape['id_etape'], $etape['titre'], $etape['description'], $etape['contenu'], $etape['id_user'], $etape['id_cours']);
     }
 
