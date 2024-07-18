@@ -22,7 +22,7 @@ class Avis {
     public static function selectAvis($id){ 
         $list =[];
         $db = Db::getInstance();
-        $query = $db->prepare(' SELECT * FROM commentaires c  LEFT JOIN (SELECT * FROM users) u ON c.id_user = u.id_user WHERE id_etape = :id ');
+        $query = $db->prepare(' SELECT * FROM commentaires c LEFT JOIN users u ON c.id_user = u.id_user WHERE id_etape = :id ');
         $query->execute(['id' => $id]);
         foreach($query->fetchAll() as $avis) {
             $list[] = new Avis($avis['id_commentaire'], $avis['avis'], $avis['notation'], $avis['id_etape'], $avis['id_user'], $avis['nom'], $avis['prenom']);

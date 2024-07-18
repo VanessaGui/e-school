@@ -18,7 +18,5 @@
         public function assignerCoursEleve(){
             $coursAssigne = Assigne::assignerCoursEleve($_GET['id']);
         }
-
     }
-
 ?>
