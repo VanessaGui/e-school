@@ -27,6 +27,8 @@
     <script>
     tinymce.init({
       selector: 'textarea.editable',
+      language: 'fr_FR',
+      language_url: 'https://cdn.tiny.cloud/1/no-api-key/tinymce/5/langs/fr_FR.js',
       plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
       toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
       tinycomments_mode: 'embedded',
